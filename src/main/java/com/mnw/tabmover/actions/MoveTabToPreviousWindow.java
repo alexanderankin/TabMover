@@ -12,7 +12,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.mnw.tabmover.NextWindowStrategy;
 import com.mnw.tabmover.PreviousWindowStrategy;
-import com.mnw.tabmover.TabMoverAppComponent;
 
 public class MoveTabToPreviousWindow extends WindowAction /*implements FileEditorManagerListener*/ {
 
@@ -23,7 +22,6 @@ public class MoveTabToPreviousWindow extends WindowAction /*implements FileEdito
     @Override
     public void performAction() {
         final EditorWithProviderComposite activeEditorTab = activeWindowPane.getSelectedEditor();
-        activeEditorTab.getInitialFileTimeStamp();
         final VirtualFile activeFile = activeEditorTab.getFile();
         otherWindowPane.getManager().openFileImpl2(otherWindowPane, activeFile, true);
         //previousWindowPane.getManager().addFileEditorManagerListener(this);
